@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kompresi File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kompresi File</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Pilih File:</label>
+            <input type="file" id="file" name="file" required>
+            <label for="compression_type">Pilih Tipe Kompresi:</label>
+            <select id="compression_type" name="compression_type" required>
+                <option value="image_dct">Gambar (DCT)</option>
+                <option value="image_dft">Gambar (DFT)</option>
+                <option value="audio_dct">Audio (DCT)</option>
+                <option value="audio_dft">Audio (DFT)</option>
+                <option value="video_dct">Video (DCT)</option>
+                <option value="video_dft">Video (DFT)</option>
+            </select>
+            <input type="submit" value="Unggah dan Kompresi">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compression Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Compression Result</h1>
+        <p>Original File: <a href="{{ url_for('uploaded_file', filename=original_file) }}">{{ original_file }}</a> ({{ original_size }} bytes)</p>
+        <p>Compressed File: <a href="{{ url_for('download_compressed', filename=compressed_file) }}">{{ compressed_file }}</a> ({{ compressed_size }} bytes)</p>
+        <a href="{{ url_for('index') }}">Compress another file</a>
+    </div>
+</body>
+</html>
